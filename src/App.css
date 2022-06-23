@@ -5,8 +5,57 @@
   --color-4: #cb535f;
   --color-5: #333e4f;
   --color-6: #c44a3e;
+  --type-first: Elvetica, Arial, sans-serife;
+  --type-second: "Spectral", georgia;
 }
+
+/** RESET */
+* {
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
 input {
   display: block;
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-family: var(--type-first);
+  color: var(--color-5);
+}
+
+body {
+  margin: 0;
+  padding-top: 4rem;
+  color: var(--color-5);
+  font-family: var(--type-first);
+  background: var(--color-1);
+}
+
+.container {
+  max-width: 50rem;
+  padding: 0 1rem;
+  margin: 0 auto;
 }
