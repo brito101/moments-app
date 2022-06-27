@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import styles from "./Header.module.css"
 import { ReactComponent as Logo } from "../Assets/logo.svg"
-import { UserContext } from "../UserContex"
+import { UserContext } from "../UserContext"
 
 export default function Header() {
   const { data, userLogout } = React.useContext(UserContext)
