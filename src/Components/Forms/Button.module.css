@@ -10,6 +10,8 @@
   box-sizing: border-box;
   transition: 0.2s;
   min-width: 8rem;
+  display: inline-block;
+  text-align: center;
 }
 
 .button:hover,

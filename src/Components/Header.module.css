@@ -4,6 +4,7 @@
   width: 100%;
   z-index: 100;
   top: 0;
+  background-color: var(--color-1);
 }
 
 .nav {
@@ -15,6 +16,10 @@
 
 .logo {
   padding: 0.5rem 0;
+}
+
+.logo svg {
+  height: 60px;
 }
 
 .login {
