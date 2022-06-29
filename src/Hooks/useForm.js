@@ -9,7 +9,11 @@ const types = {
   password: {
     regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
     message:
-      'A senha precisa ter 1 caracter maíusculo, 1 minúsculo e 1 digito. Com no mínimo 8 caracteres.',
+      "A senha precisa ter 1 caracter maíusculo, 1 minúsculo e 1 digito. Com no mínimo 8 caracteres.",
+  },
+  number: {
+    regex: /^\d+$/,
+    message: "Utilize somente números",
   },
 }
 
@@ -32,7 +36,7 @@ export default function useForm(type) {
   }
 
   function onChange({ target }) {
-    if(error) validate(target.value)
+    if (error) validate(target.value)
     setValue(target.value)
   }
 

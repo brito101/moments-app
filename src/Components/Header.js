@@ -3,9 +3,11 @@ import { Link } from "react-router-dom"
 import styles from "./Header.module.css"
 import { ReactComponent as Logo } from "../Assets/logo.svg"
 import { UserContext } from "../UserContext"
+import useMedia from "../Hooks/useMedia"
 
 export default function Header() {
   const { data } = React.useContext(UserContext)
+  const mobile = useMedia("(max-width: 40rem)")
 
   return (
     <header className={styles.header}>
@@ -15,7 +17,7 @@ export default function Header() {
         </Link>
         {data ? (
           <Link className={styles.login} to='/conta'>
-            {data.name}
+            {!mobile && data.name}
           </Link>
         ) : (
           <Link className={styles.login} to='/login'>
