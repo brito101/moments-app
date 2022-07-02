@@ -20,7 +20,7 @@
 }
 
 .details {
-  padding: 2rem 2rem 0 2rem;
+  padding: 1.5rem;
 }
 
 .img {
@@ -79,4 +79,10 @@
   width: 2px;
   background: var(--color-6);
   margin-top: 5px;
+}
+
+.date {
+  text-align: right;
+  font-size: 0.875rem;
+  font-style: italic;
 }

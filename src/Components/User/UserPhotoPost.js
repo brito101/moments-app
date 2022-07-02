@@ -41,7 +41,7 @@ export default function UserPhotoPost() {
   return (
     <section className={`${styles.photoPost} animeLeft`}>
       <form onSubmit={handleSubmit}>
-        <Input label='Nome' type='text' name='name' {...name} />
+        <Input label='Título' type='text' name='name' {...name} />
         <Input label='Descrição' type='text' name='description' {...description} />
         <input
           className={styles.file}
