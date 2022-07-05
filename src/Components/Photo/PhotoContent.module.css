@@ -3,9 +3,8 @@
   max-height: 36rem;
   border-radius: 0.2rem;
   background: var(--color-1);
-  display: grid;
-  grid-template-columns: 36rem 20rem;
-  grid-template-rows: auto 1fr auto;
+  display: flex;
+  flex-wrap: wrap;
   overflow: hidden;
   opacity: 0;
   transform: scale(0.8);
@@ -20,16 +19,16 @@
 }
 
 .details {
+  flex-basis: 40%;
   padding: 1.5rem;
 }
 
 .img {
-  grid-row: 1/4;
+  flex-basis: 60%;
 }
 
 .img img {
   object-fit: cover;
-  max-height: 100%;
   aspect-ratio: 1;
 }
 
@@ -38,10 +37,13 @@
     height: auto;
     max-height: calc(100vh - 4rem);
     overflow-y: auto;
-    grid-template-columns: minmax(20rem, 40rem);
   }
-  .img {
-    grid-row: 1;
+}
+
+@media (max-width: 48rem) {
+  .img,
+  .details {
+    flex-basis: 100%;
   }
 }
 

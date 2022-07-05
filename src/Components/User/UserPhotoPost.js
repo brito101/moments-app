@@ -7,6 +7,7 @@ import Button from "../Forms/Button"
 import Error from "../Helper/Error"
 import { PHOTO_POST } from "../../Api"
 import { useNavigate } from "react-router-dom"
+import Head from "../Helper/Head"
 
 export default function UserPhotoPost() {
   const name = useForm()
@@ -40,6 +41,7 @@ export default function UserPhotoPost() {
 
   return (
     <section className={`${styles.photoPost} animeLeft`}>
+      <Head title="Postagem de Foto" description="Página de postagem de foto do site Moments"/>
       <form onSubmit={handleSubmit}>
         <Input label='Título' type='text' name='name' {...name} />
         <Input label='Descrição' type='text' name='description' {...description} />

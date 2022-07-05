@@ -6,6 +6,7 @@ import useForm from "../../Hooks/useForm"
 import { USER_POST } from "../../Api"
 import { UserContext } from "../../UserContext"
 import useFetch from '../../Hooks/useFetch';
+import Head from "../Helper/Head";
 
 export default function LoginCreate() {
   const username = useForm()
@@ -28,6 +29,7 @@ export default function LoginCreate() {
 
   return (
     <section className='animeLeft'>
+      <Head title="Cadastro" description="Página de cadastro do site Moments"/>
       <h1 className='title'>Cadastre-se</h1>
       <form onSubmit={handleSubmit}>
         <Input label='Usuário' type='text' name='username' {...username} />
