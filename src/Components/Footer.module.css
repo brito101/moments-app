@@ -1,0 +1,17 @@
+.footer {
+  background: var(--color-5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.footer svg {
+  width: 200px;
+}
+
+.footer p {
+  flex-basis: 100%;
+  color: var(--color-3);
+  text-align: center;
+}

@@ -37,7 +37,7 @@ export default function LoginReset() {
   }
 
   return (
-    <div>
+    <section className="animeLeft">
       <Head title="Resetar Senha" description="Página de reset de senha do site Moments"/>
       <h1 className='title'>Resete a Senha</h1>
       <form onSubmit={handleSubmit}>
@@ -54,6 +54,6 @@ export default function LoginReset() {
         )}
       </form>
       <Error error={error} />
-    </div>
+    </section>
   )
 }

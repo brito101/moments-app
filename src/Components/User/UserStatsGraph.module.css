@@ -1,0 +1,30 @@
+.graph {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.graphItem {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 0.2rem;
+  flex-basis: calc(50% - 20px);
+  align-items: center;
+}
+
+.total {
+  flex-basis: 100%;
+  padding: 2rem;
+  font-size: 2rem;
+}
+
+@media (max-width: 40rem) {
+  .graph {
+    justify-content: center;
+  }
+
+  .graphItem {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
+}

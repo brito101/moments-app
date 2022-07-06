@@ -24,7 +24,7 @@ export default function LoginLost() {
   }
 
   return (
-    <section>
+    <section className="animeLeft">
       <Head title="Recuperação de Senha" description="Página de recuperação de senha do site Moments"/>
       <h1 className='title'>Perdeu a senha?</h1>
       {data ? (
