@@ -1,5 +1,6 @@
 .photo {
   margin: auto;
+  margin-bottom: 30px;
   max-height: 36rem;
   border-radius: 0.2rem;
   background: var(--color-1);

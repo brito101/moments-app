@@ -2,11 +2,11 @@ import React from "react"
 import { Link } from "react-router-dom"
 import styles from "./Header.module.css"
 import { ReactComponent as Logo } from "../Assets/logo.svg"
-import { UserContext } from "../UserContext"
 import useMedia from "../Hooks/useMedia"
+import { useSelector } from 'react-redux';
 
 export default function Header() {
-  const { data } = React.useContext(UserContext)
+  const { data } = useSelector((state) => state.user);
   const mobile = useMedia("(max-width: 40rem)")
 
   return (

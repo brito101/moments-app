@@ -1,29 +1,30 @@
 import React from "react"
 import { Navigate, Route, Routes } from "react-router-dom"
-import { UserContext } from "../../UserContext"
 import LoginCreate from "./LoginCreate"
 import LoginForm from "./LoginForm"
 import LoginLost from "./LoginLost"
 import LoginReset from "./LoginReset"
-import styles from './Login.module.css'
+import styles from "./Login.module.css"
 import NotFound from "../NotFound"
+import { useSelector } from "react-redux"
+import Loading from "../Helper/Loading"
 
 export default function Login() {
-  const { login } = React.useContext(UserContext)
+  const { data, loading } = useSelector((state) => state.user)
 
-  if (login === true) return <Navigate to="/conta" />;
-
+  if (loading) return <Loading />
+  if (data) return <Navigate to='/conta' />
   return (
     <section className={styles.login}>
       <div className={styles.forms}>
-      <Routes>
-        <Route path='/' element={<LoginForm />} />
-        <Route path='cadastro' element={<LoginCreate />} />
-        <Route path='recuperar-senha' element={<LoginLost />} />
-        <Route path='resetar-senha' element={<LoginReset />} />
-        <Route path='*' element={<NotFound />}></Route>
-      </Routes>
-    </div>
+        <Routes>
+          <Route path='/' element={<LoginForm />} />
+          <Route path='cadastro' element={<LoginCreate />} />
+          <Route path='recuperar-senha' element={<LoginLost />} />
+          <Route path='resetar-senha' element={<LoginReset />} />
+          <Route path='*' element={<NotFound />}></Route>
+        </Routes>
+      </div>
     </section>
   )
 }
