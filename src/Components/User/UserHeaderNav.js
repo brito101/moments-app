@@ -1,5 +1,4 @@
 import React from "react"
-import { UserContext } from "../../UserContext"
 import { ReactComponent as MinhasFotos } from "../../Assets/feed.svg"
 import { ReactComponent as Estatisticas } from "../../Assets/estatisticas.svg"
 import { ReactComponent as AdicionarFoto } from "../../Assets/adicionar.svg"
@@ -7,9 +6,11 @@ import { ReactComponent as Sair } from "../../Assets/sair.svg"
 import styles from "./UserHeaderNav.module.css"
 import { NavLink, useLocation } from "react-router-dom"
 import useMedia from "../../Hooks/useMedia"
+import { useDispatch } from "react-redux"
+import { userLogout } from "../../store/user"
 
 export default function UserHeaderNav() {
-  const { userLogout } = React.useContext(UserContext)
+  const dispatch = useDispatch()
   const mobile = useMedia("(max-width: 40rem)")
   const [mobileMenu, setMobileMenu] = React.useState(false)
 
@@ -35,19 +36,19 @@ export default function UserHeaderNav() {
           mobileMenu && styles.navMobileActive
         }`}
       >
-        <NavLink to='/conta' end>
+        <NavLink to='/conta' end activeclassname={styles.active}>
           <MinhasFotos />
           {mobile && "Minhas Fotos"}
         </NavLink>
-        <NavLink to='/conta/estatisticas'>
+        <NavLink to='/conta/estatisticas' activeclassname={styles.active}>
           <Estatisticas />
           {mobile && "Estatísticas"}
         </NavLink>
-        <NavLink to='/conta/postar'>
+        <NavLink to='/conta/postar' activeclassname={styles.active}>
           <AdicionarFoto />
           {mobile && "Adicionar Foto"}
         </NavLink>
-        <button onClick={userLogout}>
+        <button onClick={() => dispatch(userLogout())}>
           <Sair />
           {mobile && "Sair"}
         </button>

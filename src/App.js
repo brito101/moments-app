@@ -9,13 +9,19 @@ import NotFound from "./Components/NotFound"
 import Photo from "./Components/Photo/Photo"
 import User from "./Components/User/User"
 import UserProfile from "./Components/User/UserProfile"
-import { UserStorage } from "./UserContext"
+import { useDispatch } from 'react-redux';
+import { autoLogin } from './store/user';
+import React from "react"
 
 function App() {
+  const dispatch = useDispatch();
+  React.useEffect(() => {
+    dispatch(autoLogin());
+  }, [dispatch]);
+
   return (
     <div className='app'>
       <BrowserRouter>
-        <UserStorage>
           <Header />
           <main className='app-body'>
             <Routes>
@@ -35,7 +41,6 @@ function App() {
             </Routes>
           </main>
           <Footer />
-        </UserStorage>
       </BrowserRouter>
     </div>
   )

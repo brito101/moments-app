@@ -1,13 +1,12 @@
 import React from "react"
 import styles from "./PhotoContent.module.css"
 import { Link } from "react-router-dom"
-import { UserContext } from "../../UserContext"
 import PhotoDelete from "./PhotoDelete"
 import Image from "../Helper/Image"
 import { useSelector } from 'react-redux';
 
 export default function PhotoContent() {
-  const user = React.useContext(UserContext)
+  const { user } = useSelector((state) => state);
   const { photo } = useSelector((state) => state.photo.data);
 
   return (
