@@ -28,11 +28,8 @@ export default function PhotoContent() {
           </h1>
           <p className={styles.date}>
             Postado em:{" "}
-            {new Date(photo.date).toLocaleString("pt-br").slice(0, -3)}hs
+            {new Date(photo.date).toLocaleString("pt-br")}
           </p>
-          <ul className={styles.attributes}>
-            <li>{photo.description}</li>
-          </ul>
         </div>
       </div>
     </div>

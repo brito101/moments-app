@@ -21,7 +21,7 @@ export default function Header() {
           </Link>
         ) : (
           <Link className={styles.login} to='/login'>
-            Login / Criar
+            Login
           </Link>
         )}
       </nav>
